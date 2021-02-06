@@ -193,17 +193,10 @@ MIP2=$(wget -qO- ipv4.icanhazip.com)
 }  
 
 function_verify () {
-  permited=$(curl -sSL "https://raw.githubusercontent.com/VPS-MX/VPS-MX-8.0/master/Control-IP")
-  [[ $(echo $permited|grep "${IP}") = "" ]] && {
-  echo -e "\n\n\n\033[1;95m======================================================\n ¡ESTA KEY NO CONCUERDA CON EL INSTALADOR!,CONATACTE A @Kalix1\n======================================================\n"
-  [[ -d /etc/newadm ]] && rm -rf /etc/newadm
-  exit 1
-  } || {
   ### INTALAR VERCION DE SCRIPT
   v1=$(curl -sSL "https://raw.githubusercontent.com/VPS-MX/VPS-MX-8.0/master/Vercion")
   echo "$v1" > /etc/versin_script
   }
-}
 
 funcao_idioma () {
 msg -bar2
